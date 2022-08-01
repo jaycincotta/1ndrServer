@@ -1,0 +1,22 @@
+{
+  "name": "1ndrserver",
+  "version": "1.0.0",
+  "description": "Learn how to use serverless functions in less than 30 minutes!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaycincotta/1ndrServer.git"
+  },
+  "author": "Jay Cincotta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaycincotta/1ndrServer/issues"
+  },
+  "homepage": "https://github.com/jaycincotta/1ndrServer#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  }
+}
