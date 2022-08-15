@@ -8,9 +8,9 @@ const router = express.Router();
 
 app.use(express.json())
 app.use(cors())
-app.use('/.netlify/functions/api', router);  // path must route to lambda
+app.use('/.netlify/functions/api', router)  // path must route to lambda
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET)
+const STRIPE = require("stripe")
 
 router.get('/', async (req, res) => {
 	res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -26,12 +26,14 @@ router.get('/hello', (req, res) => {
 })
 
 router.post("/checkout", async (req, res) => {
-	console.log("REQUEST BODY", req.body);
 	const { title, product, price, format, cancelUrl } = req.body
 	const successURL = req.headers.referer + "thanks"
 	const cancelURL = cancelUrl
 	const errorURL = req.headers.referer + "error"
-
+	const isDev = req.headers.referer.includes("dev.1ndr.com") || req.headers.referer.includes("localhost");
+	const secret = isDev ? process.env.STRIPE_SECRET_TEST : process.env.STRIPE_SECRET;
+	const stripe = STRIPE(secret)
+	console.log("Checkout", isDev ? "TEST" : "LIVE", req.body);
 
 	try {
 		const session = await stripe.checkout.sessions.create({
