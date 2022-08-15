@@ -1,8 +1,8 @@
 {
   "name": "1ndrserver",
   "version": "1.0.0",
-  "description": "Learn how to use serverless functions in less than 30 minutes!",
-  "main": "index.js",
+  "description": "API functions for 1ndr.com",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,14 @@
   },
   "homepage": "https://github.com/jaycincotta/1ndrServer#readme",
   "dependencies": {
-    "node-fetch": "^2.6.6"
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "netlify-cli": "^10.17.4",
+    "netlify-lambda": "^2.0.15",
+    "node-fetch": "^2.6.6",
+    "serverless-http": "^3.0.1",
+    "stripe": "^9.16.0"
   }
 }
