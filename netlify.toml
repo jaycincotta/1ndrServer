@@ -1,6 +1,6 @@
 [build]
   command = "npm install && npm run build"
-  functions = "functions"
+  functions = "functions-build"
   publish = "netlify/functions"
 
 [[headers]]
