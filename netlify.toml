@@ -1,7 +1,7 @@
 [build]
   command = "npm install && npm run build"
   functions = "functions-build"
-  publish = "build"
+  publish = "netlify/functions"
 
 [[headers]]
     for = "/*"
